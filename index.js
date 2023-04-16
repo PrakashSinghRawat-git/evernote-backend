@@ -17,5 +17,5 @@ app.use('/api/notes', require('./routes/notes'))
 
 
 app.listen(port, () => {
-  console.log(`iNotebook backend listening at port ${port} process.env.MONGO_URI`)
+  console.log(`evernote backend listening at port ${port} `)
 })

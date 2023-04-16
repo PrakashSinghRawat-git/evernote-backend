@@ -7,7 +7,7 @@ const mongoURI = process.env.MONGO_URI;
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI).then(() => {
-        console.log("Connected to Mongo Successfully", mongoURI)}, (err) => {
+        console.log("Connected to MongoDB Successfully")}, (err) => {
             console.log(`some error occured: ${err}`);
         });
     
