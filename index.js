@@ -13,7 +13,7 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
   res.status(200).send('Welcome to Evernote Backend')
-}
+})
 
 // Available Routes
 app.use('/api/auth', require('./routes/auth'))
