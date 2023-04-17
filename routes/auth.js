@@ -59,7 +59,7 @@ router.post(
 
         } catch (error) {
             console.error(error.message);
-            res.status(500).send(success, "Internal Server Error");
+            res.status(500).send({ error: "Please try to login with correct credentials"});
         }
     }
 );
