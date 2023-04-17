@@ -6,6 +6,24 @@ const { body, validationResult } = require('express-validator');
 
 // ROUTE 1: Get All the Notes using: GET "/api/notes/getuser". Login required
 
+router.get("/notes", async (req, res) => {
+    try {
+        const notes = await Note.find({});
+        res.status(200).json(notes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("cant fetch /notes Internal Server Error");
+    }
+});
+router.get("/notesAuth",fetchuser, async (req, res) => {
+    try {
+        const notes = await Note.find({});
+        res.status(200).json(notes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("cant fetch /notes Internal Server Error");
+    }
+});
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
     try {
         const notes = await Note.find({ user: req.user.id });
